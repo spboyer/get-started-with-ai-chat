@@ -126,20 +126,41 @@ dmypy.json
 cython_debug/
 
 # IDEs and editors
-.idea/ # Uncomment if you want to ignore PyCharm settings
+.idea/
 .vscode/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
 
 # Infrastructure and Deployment
-.azure
+.azure/
 kustomization.yaml
 kind
 kustomize
-.terraform*
+
+# Terraform
+.terraform/
+.terraform.*
 *.tfstate
+*.tfstate.*
 *.tfstate.backup
+*.tfplan
+*.tfvars
+!*.tfvars.example
+terraform.rc
+.terraformrc
+
+# Azure
 *_env
 *.data
 .runs/
+__azurite_db_table__.json
+AzuriteConfig
+
+# Build and dependencies
 **/node_modules/
 package-lock.json
 src/api/api/agents/writer/.promptflow/

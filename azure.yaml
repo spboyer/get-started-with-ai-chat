@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
 
-name: azd-get-started-with-ai-chat
+name: azd-get-started-with-ai-chat-tf
 metadata:
-  template: azd-get-started-with-ai-chat@1.0.0
+  template: azd-get-started-with-ai-chat-tf@1.0.0
 
 hooks:
   postprovision:
@@ -16,6 +16,17 @@ hooks:
       run: ./scripts/write_env.sh
       continueOnError: true
       interactive: true
+
+services:
+  api:
+    project: src/api
+    language: python
+    host: containerapp
+
+
+infra:
+  provider: terraform
+  path: infra
 
 pipeline:
   variables:

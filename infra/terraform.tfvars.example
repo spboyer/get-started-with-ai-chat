@@ -1,0 +1,45 @@
+# Example Terraform variables file
+# Copy this to terraform.tfvars and customize for your deployment
+
+# Required variables
+environment_name = "my-ai-chat-env"
+location = "eastus"
+
+# Optional: Set this to your user principal ID for role assignments
+# principal_id = "00000000-0000-0000-0000-000000000000"
+
+# Optional: Use existing AI project
+# azure_existing_ai_project_resource_id = ""
+
+# Optional: Custom resource names (if not specified, will be auto-generated)
+# resource_group_name = ""
+# ai_services_name = ""
+# application_insights_name = ""
+# storage_account_name = ""
+# log_analytics_workspace_name = ""
+
+# AI Model Configuration
+chat_model_format = "OpenAI"
+chat_model_name = "gpt-4o-mini"
+chat_deployment_name = "gpt-4o-mini"
+chat_model_version = "2024-07-18"
+chat_deployment_sku = "GlobalStandard"
+chat_deployment_capacity = 30
+
+embed_model_format = "OpenAI"
+embed_model_name = "text-embedding-3-small"
+embedding_deployment_name = "text-embedding-3-small"
+embedding_deployment_dimensions = "100"
+embed_model_version = "1"
+embed_deployment_sku = "Standard"
+embed_deployment_capacity = 30
+
+# Features
+use_application_insights = true
+use_search_service = false
+enable_azure_monitor_tracing = false
+azure_tracing_gen_ai_content_recording_enabled = false
+
+# Search configuration (if enabled)
+# search_service_name = ""
+# ai_search_index_name = ""
